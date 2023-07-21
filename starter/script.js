@@ -89,13 +89,15 @@ var upperCasedCharacters = [
 ];
 
 userPrompt = 0
+userInput = 0
 // var userInput = userPrompt
 // Function to prompt user for password options
  function getPasswordOptions() {
 
  userPrompt = prompt("Please select a number between 8 and 128 to determine the length of your password");
+//  userPrompt2 = prompt("Please type in if you ")
 
-var userInput = userPrompt
+ var userInput = userPrompt
 
 console.log(userInput)
 
@@ -106,6 +108,8 @@ return
 getPasswordOptions(userPrompt);
 
 // Function for getting a random element from an array
+var numberRandom = 0
+
 function getRandom(array) {
 for (let i=0; i < array.length; i++);
 var numberRandom = array[Math.floor(Math.random()*array.length)]
@@ -113,15 +117,43 @@ var numberRandom = array[Math.floor(Math.random()*array.length)]
 return;
 }
 
-getRandom(specialCharacters)
+getRandom(specialCharacters) 
 getRandom(numericCharacters)
 getRandom(lowerCasedCharacters)
 getRandom(upperCasedCharacters)
 
 // Function to generate password with user input
+
+var passLength = 0
+
 function generatePassword() {
 
+  //some sort of loop that sets the getRandom to loop until the condition (password length) has been met//
+  //if else statements to select the correct arrays as per the user input//
+
+  for (let j=0; j < getPasswordOptions(userPrompt) ; j++) {
+     for (let k=0; k <numberRandom; k++ )
+     passLength = passLength[j][k]
+     
+     password = passLength[j][k][Math.floor(Math.random()*passLength[j][k].length)]
+
+  }
+   
+  
+
+  
+
+  console.log(password)
+return;
+
 }
+
+generatePassword(password)
+// generatePassword(specialCharacters)
+// generatePassword(numericCharacters)
+// generatePassword(lowerCasedCharacters)
+// generatePassword(upperCasedCharacters)
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
