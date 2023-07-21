@@ -88,15 +88,35 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+userPrompt = 0
+// var userInput = userPrompt
 // Function to prompt user for password options
-function getPasswordOptions() {
+ function getPasswordOptions() {
+
+ userPrompt = prompt("Please select a number between 8 and 128 to determine the length of your password");
+
+var userInput = userPrompt
+
+console.log(userInput)
+
+return
 
 }
+
+getPasswordOptions(userPrompt);
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-
+function getRandom(array) {
+for (let i=0; i < array.length; i++);
+var numberRandom = array[Math.floor(Math.random()*array.length)]
+    console.log(numberRandom)
+return;
 }
+
+getRandom(specialCharacters)
+getRandom(numericCharacters)
+getRandom(lowerCasedCharacters)
+getRandom(upperCasedCharacters)
 
 // Function to generate password with user input
 function generatePassword() {
