@@ -89,18 +89,24 @@ var upperCasedCharacters = [
 ];
 
 userPrompt = 0
-userInput = 0
-// var userInput = userPrompt
+userInputLength = 0
+userInputArr= []
+
 // Function to prompt user for password options
  function getPasswordOptions() {
+userPrompt = prompt("Please select a number between 8 and 128 to determine the length of your password")
+userInputNum= (prompt("Type yes or no if you would like your password to include numbers") )
+                    // prompt("Type yes or no if you would like your password to include capital letters") +
+                    // prompt("Type yes or no if you would like your password to include lowecase letters") + 
+userInputSplChr = (prompt("Type yes or no if you would like your password to include special characters (!?_*)"));
+ 
+userInputArr.push(userInputNum,userInputSplChr);
+  
+var userInputLength = userPrompt
 
- userPrompt = prompt("Please select a number between 8 and 128 to determine the length of your password");
-//  userPrompt2 = prompt("Please type in if you ")
-
- var userInput = userPrompt
-
-console.log(userInput)
-
+  
+console.log(userInputLength)
+console.log(userInputArr)
 return
 
 }
@@ -125,26 +131,21 @@ getRandom(upperCasedCharacters)
 // Function to generate password with user input
 
 var passLength = 0
+var password = 0
 
 function generatePassword() {
 
   //some sort of loop that sets the getRandom to loop until the condition (password length) has been met//
   //if else statements to select the correct arrays as per the user input//
 
-  for (let j=0; j < getPasswordOptions(userPrompt) ; j++) {
-     for (let k=0; k <numberRandom; k++ )
-     passLength = passLength[j][k]
-     
-     password = passLength[j][k][Math.floor(Math.random()*passLength[j][k].length)]
 
-  }
    
   
 
   
 
-  console.log(password)
-return;
+//   console.log(password)
+// return;
 
 }
 
