@@ -90,47 +90,54 @@ var upperCasedCharacters = [
 
 userPrompt = 0
 userInputLength = 0
-userInputArr= []
+userInputArr = []
+
 
 // Function to prompt user for password options
- function getPasswordOptions() {
-userPrompt = prompt("Please select a number between 8 and 128 to determine the length of your password")
-userInputNum= (prompt("Type yes or no if you would like your password to include numbers") )
-                    // prompt("Type yes or no if you would like your password to include capital letters") +
-                    // prompt("Type yes or no if you would like your password to include lowecase letters") + 
-userInputSplChr = (prompt("Type yes or no if you would like your password to include special characters (!?_*)"));
- 
-userInputArr.push(userInputNum,userInputSplChr);
-  
-var userInputLength = userPrompt
+function getPasswordOptions() {
+  userPrompt = prompt("Please select a number between 8 and 128 to determine the length of your password")
 
-  
-console.log(userInputLength)
-console.log(userInputArr)
-return
+  //yes/no prompts to collect data - need to convert them in boolean values once in array
+  userInputNum = (prompt("Type yes or no if you would like your password to include numbers"))
+  userInputCap = (prompt("Type yes or no if you would like your password to include capital letters"))
+  userInputLow = (prompt("Type yes or no if you would like your password to include lowecase letters"))
+  userInputSplChr = (prompt("Type yes or no if you would like your password to include special characters (!?_*)"));
+
+  (userInputArr.push(userInputNum, userInputCap, userInputLow, userInputSplChr))
+
+  userInputLength = userPrompt
+
+
+   console.log(userInputLength)
+   console.log(userInputArr)
+
+  return
 
 }
+getPasswordOptions(userPrompt, userInputArr, userInputLength) 
 
-getPasswordOptions(userPrompt);
 
 // Function for getting a random element from an array
 var numberRandom = 0
 
 function getRandom(array) {
-for (let i=0; i < array.length; i++);
-var numberRandom = array[Math.floor(Math.random()*array.length)]
-    console.log(numberRandom)
-return;
+  for (let i = 0; i < array.length; i++);
+  var numberRandom = array[Math.floor(Math.random() * array.length)]
+
+
+  console.log(numberRandom)
+
+  return;
 }
 
-getRandom(specialCharacters) 
-getRandom(numericCharacters)
-getRandom(lowerCasedCharacters)
-getRandom(upperCasedCharacters)
+getRandom(specialCharacters)
+ getRandom(numericCharacters)
+ getRandom(lowerCasedCharacters)
+ getRandom(upperCasedCharacters)
 
 // Function to generate password with user input
 
-var passLength = 0
+var passLength = []
 var password = 0
 
 function generatePassword() {
@@ -138,18 +145,18 @@ function generatePassword() {
   //some sort of loop that sets the getRandom to loop until the condition (password length) has been met//
   //if else statements to select the correct arrays as per the user input//
 
-
-   
   
 
-  
 
-//   console.log(password)
-// return;
+
+
+
+    console.log(passLength)
+   return;
 
 }
 
-generatePassword(password)
+generatePassword(passLength)
 // generatePassword(specialCharacters)
 // generatePassword(numericCharacters)
 // generatePassword(lowerCasedCharacters)
