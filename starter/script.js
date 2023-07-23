@@ -1,5 +1,7 @@
 // Array of special characters to be included in password
-var specialCharacters = [
+var passCharacters = [
+
+  specialCharacters = [
   '@',
   '%',
   '+',
@@ -23,13 +25,13 @@ var specialCharacters = [
   '-',
   '_',
   '.'
-];
+],
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+ numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
+ lowerCasedCharacters = [
   'a',
   'b',
   'c',
@@ -56,10 +58,10 @@ var lowerCasedCharacters = [
   'x',
   'y',
   'z'
-];
+],
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
+ upperCasedCharacters = [
   'A',
   'B',
   'C',
@@ -86,6 +88,7 @@ var upperCasedCharacters = [
   'X',
   'Y',
   'Z'
+], 
 ];
 
 userPrompt = 0
@@ -95,17 +98,17 @@ userInputArr = []
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  userPrompt = prompt("Please select a number between 8 and 128 to determine the length of your password")
+   userPrompt = prompt("Please select a number between 8 and 128 to determine the length of your password")
 
-  //yes/no prompts to collect data - need to convert them in boolean values once in array
-  userInputNum = (prompt("Type yes or no if you would like your password to include numbers"))
-  userInputCap = (prompt("Type yes or no if you would like your password to include capital letters"))
-  userInputLow = (prompt("Type yes or no if you would like your password to include lowecase letters"))
-  userInputSplChr = (prompt("Type yes or no if you would like your password to include special characters (!?_*)"));
+  // // //yes/no prompts to collect data - need to convert them in boolean values once in array
+    userInputNum = (prompt("Type yes or no if you would like your password to include numbers"))
+    userInputCap = (prompt("Type yes or no if you would like your password to include capital letters"))
+    userInputLow = (prompt("Type yes or no if you would like your password to include lowecase letters"))
+    userInputSplChr = (prompt("Type yes or no if you would like your password to include special characters (!?_*)"));
 
-  (userInputArr.push(userInputNum, userInputCap, userInputLow, userInputSplChr))
+   (userInputArr.push(userInputNum, userInputCap, userInputLow, userInputSplChr))
 
-  userInputLength = userPrompt
+   userInputLength = userPrompt
 
 
    console.log(userInputLength)
@@ -120,47 +123,56 @@ getPasswordOptions(userPrompt, userInputArr, userInputLength)
 // Function for getting a random element from an array
 var numberRandom = 0
 
+
 function getRandom(array) {
-  for (let i = 0; i < array.length; i++);
-  var numberRandom = array[Math.floor(Math.random() * array.length)]
-
-
-  console.log(numberRandom)
-
+ 
+      let j=0; j < array.length; j++
+     numberRandom = (array[Math.floor(Math.random() * array.length)])
+    
+    console.log(numberRandom)
+    
   return;
 }
 
-getRandom(specialCharacters)
- getRandom(numericCharacters)
- getRandom(lowerCasedCharacters)
+ getRandom(specialCharacters)
  getRandom(upperCasedCharacters)
+ getRandom(lowerCasedCharacters)
+ getRandom(numericCharacters)
+ 
 
 // Function to generate password with user input
 
-var passLength = []
-var password = 0
 
-function generatePassword() {
+
+var password = []
+
+function generatePassword(array) {
 
   //some sort of loop that sets the getRandom to loop until the condition (password length) has been met//
   //if else statements to select the correct arrays as per the user input//
-
   
+  password.length = userInputLength
+  let j=0; j < password.length; j++
+ passCharacters = (numberRandom[Math.floor(Math.random() * password.length)])
+
+ password.push(passCharacters)
+
+console.log(password)
+console.log(password.length)
+console.log (passCharacters)
 
 
-
-
-
-    console.log(passLength)
-   return;
-
+return;
+  
 }
 
-generatePassword(passLength)
-// generatePassword(specialCharacters)
-// generatePassword(numericCharacters)
-// generatePassword(lowerCasedCharacters)
-// generatePassword(upperCasedCharacters)
+
+
+// generatePassword(password)
+ generatePassword(specialCharacters)
+ generatePassword(numericCharacters)
+ generatePassword(lowerCasedCharacters)
+ generatePassword(upperCasedCharacters)
 
 
 // Get references to the #generate element
